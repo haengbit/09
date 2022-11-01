@@ -7,17 +7,22 @@
 int main(int argc, char *argv[]) 
 {
 	int i;
-	int grade[SIZE];
-	int score[SIZE];
+	int a[SIZE] = {1,2,3,4,5};
+	int b[SIZE] = {1,2,3,4,5};
+	int flag = 0;
 	
-	for (i=0; i<SIZE; i++)
-		grade[i] = rand() % 100; // 0 ~ 99
+	for (i=0;i<SIZE;i++)
+	{
+		if (a[i] != b[i])
+		{
+			flag = 1;
+			printf("a is NOT the same with b.\n");
+			break;
+		}
+	}
 	
-	for (i=0; i<SIZE; i++)
-		score[i] = grade[i]; 
-		
-	for (i=0; i<SIZE; i++)
-		printf("score[%d] = %d (%d)\n", i, score[i], grade[i]);
+	if (flag == 0)
+		printf("a is the same with b.\n");
 	
 	return 0;
 } 
